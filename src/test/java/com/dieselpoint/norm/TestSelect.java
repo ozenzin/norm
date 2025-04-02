@@ -17,7 +17,7 @@ public class TestSelect {
 	
 		Setup.setSysProperties();
 		
-		Database db = new Database();
+		var db = new Database();
 		
 		db.sql("drop table if exists selecttest").execute();
 		

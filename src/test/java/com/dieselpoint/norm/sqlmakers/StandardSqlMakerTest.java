@@ -66,7 +66,7 @@ public class StandardSqlMakerTest {
     public void getCreateTableSql() {
         String createTableSql = sut.getCreateTableSql(TestTable.class);
 
-        assertEquals(createTableSql, "create table testTable (id integer auto_increment,name varchar(255), primary key (id))");
+        assertEquals("create table testTable (id integer auto_increment, name varchar(255), primary key (id))", createTableSql);
     }
 
     @Test

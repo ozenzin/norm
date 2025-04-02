@@ -13,12 +13,11 @@ public class Setup {
 		/*-
 		 * MySQL JDBC incorrectly reports bigint SQL datatype as a BigInteger.
 		 * https://stackoverflow.com/questions/65078455/mysql-jdbc-driver-incorrectly-reports-bigint-as-biginteger
-		 * /
+		 */
 		System.setProperty("norm.jdbcUrl",
 				"jdbc:mysql://localhost:3306/mydb?useSSL=false&allowPublicKeyRetrieval=true");
 		System.setProperty("norm.user", "root");
-		// System.setProperty("norm.password", "rootpassword");
-		*/
+		System.setProperty("norm.password", "password");
 
 		/*-
 		System.setProperty("norm.dataSourceClassName", "org.postgresql.ds.PGSimpleDataSource");
@@ -28,10 +27,11 @@ public class Setup {
 
 		/*-
 		 * H2 handles mixed-case column names incorrectly.
-		 */
+		 *
 		System.setProperty("norm.jdbcUrl", "jdbc:h2:./h2test;database_to_upper=false");
 		System.setProperty("norm.user", "root");
 		System.setProperty("norm.password", "rootpassword");
+		*/
 
 		/*-
 		 * SampleCode doesn't yet work because the sqlite create table syntax is different. Need a new SQL maker.

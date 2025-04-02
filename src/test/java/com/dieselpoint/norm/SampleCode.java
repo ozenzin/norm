@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.dieselpoint.norm.sqlmakers.MySqlMaker;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -21,7 +22,7 @@ public class SampleCode {
 
 		Database db = new Database();
 
-		// db.setSqlMaker(new PostgresMaker()); // set this to match your sql flavor
+		db.setSqlMaker(new MySqlMaker()); // set this to match your sql flavor
 
 		/* test straight sql */
 		db.sql("drop table if exists names").execute();
@@ -75,7 +76,7 @@ public class SampleCode {
 		List<Name> list3 = db.results(Name.class);
 		dump("fred only:", list3);
 
-		// db.sql("drop table names").execute();
+		db.sql("drop table names").execute();
 	}
 
 	public static void dump(String label, List<Name> list) {

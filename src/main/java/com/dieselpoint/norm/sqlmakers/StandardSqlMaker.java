@@ -224,7 +224,7 @@ public class StandardSqlMaker implements SqlMaker {
 		for (Property prop : pojoInfo.propertyMap.values()) {
 
 			if (needsComma) {
-				buf.append(',');
+				buf.append(", ");
 			}
 			needsComma = true;
 
@@ -239,7 +239,8 @@ public class StandardSqlMaker implements SqlMaker {
 				}
 
 			} else {
-				if (columnAnnot.columnDefinition() != null) {
+				String columnDef = columnAnnot.columnDefinition();
+				if (columnDef != null && !columnDef.isEmpty()) {
 
 					// let the column def override everything
 					buf.append(columnAnnot.columnDefinition());

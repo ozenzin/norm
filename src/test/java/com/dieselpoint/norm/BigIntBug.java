@@ -11,7 +11,7 @@ public class BigIntBug {
 	public static void main(String[] args) throws SQLException {
 
 		Connection conn = DriverManager
-				.getConnection("jdbc:mysql://localhost:3306/mydb?useSSL=false&allowPublicKeyRetrieval=true&user=root");
+				.getConnection("jdbc:mysql://localhost:3306/mydb?useSSL=false&allowPublicKeyRetrieval=true&user=root&password=zoszos7");
 
 		Statement state = conn.createStatement();
 		state.executeUpdate("drop table if exists foo");

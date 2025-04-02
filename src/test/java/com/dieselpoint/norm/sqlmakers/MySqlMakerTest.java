@@ -59,6 +59,6 @@ public class MySqlMakerTest {
         StandardPojoInfo pojoInfo = sut.getPojoInfo(StandardSqlMakerTest.TestTable.class);
         sut.makeUpsertSql(pojoInfo);
 
-        assertEquals(pojoInfo.upsertSql, "insert into testTable (name) values (?) on duplicate key update name=?");
+        assertEquals("insert into %s (name) values (?) on duplicate key update name=?", pojoInfo.upsertSql);
     }
 }
